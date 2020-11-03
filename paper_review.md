@@ -23,7 +23,9 @@ This is a review for the Logical table2text task, following the work of [wenhuch
   * *Table-BERT*: use BERT to encode linearized tables and statements into continuous vectors. 
   * *Latent Program Algorithm (LPA)*: parse statements into progrmas and executes them against tables to obtain a binary value for verification.
 
+### Introduction
 
+* 
 
 
 ## Logical NLG
