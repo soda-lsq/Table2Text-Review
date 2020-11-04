@@ -18,14 +18,27 @@ This is a review for the Logical table2text task, following the work of [wenhuch
 * Study the **fact verification** given **semi-structured table**.
   * *fact verification*: verify whether a textual hypothesis holds based on the given evidence. 
   * *semi-structured table*: unstructured evidence - natural language, document, structured evidence - tables, graphs, and databases. 
+
 * Construct a large scale dataset **TabFact** of 16k Wikipedia tables and 118k human-annoted natural language statements. **TabFact is the first dataset to evalaute language inference on strctured data.**
+
 * Propose 2 different models: 
-  * *Table-BERT*: use BERT to encode linearized tables and statements into continuous vectors. 
+  * *Table-BERT*: regard the task as a NLI problem, use BERT to encode linearized tables and statements into continuous vectors. 
   * *Latent Program Algorithm (LPA)*: parse statements into progrmas and executes them against tables to obtain a binary value for verification.
 
 ### Introduction
 
-* 
+* Challenge: verification problem for structured data. As for sequence, we could use metrics like BLEU score or other scores, but it is hard to design a reasonable metric for logical inference from a table except human judgement. 
+
+* Previous methods attempts to solve verification problem: logic rules, knowledge bases, and neural networks.
+
+* Constructed a large-scale dataset called TabFact, and proposed 2 methods Table-Bert and LPA. 
+
+
+### Table Fact Verification Dataset (TabFact)
+
+Tabfact is constructed based on WikiTables, with annotations from Amazon Mechanical Turk workers. Following a pipeline of "positive two channel annotation" -> "negative statement rewrinting" -> "verification" to ensure the annotation quality. 
+
+
 
 
 ## Logical NLG
