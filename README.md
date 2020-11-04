@@ -38,7 +38,12 @@ This is a review for the Logical table2text task, following the work of [wenhuch
 
 Tabfact is constructed based on WikiTables, with annotations from Amazon Mechanical Turk workers. Following a pipeline of "positive two channel annotation" -> "negative statement rewrinting" -> "verification" to ensure the annotation quality. 
 
+* Positive Two-Channel Collection & Negative Rewriting Strategy
+ * Low-Reward Simple Channel: write 5 sentences to a single row/record in the table, (1) with unary fact without envolving logical inference, (2) mention the cell values without modification.
+ * High-Reward Complex Channel: write 5 sentences involving multiple rows in the table, (1) with higher-order semantics, like argmax, argmin, count, difference, average, summarize, etc. (2) repharse the table to involve more semantic understanding. This channel is harder for both linguistic and symbolic reasoning. 
+ * Negative samples: rewrite the collected entailed statements to revert the statement polarity, minimizing the obvious linguistic cues or patterns. 
 
+* Dataset Statics
 
 
 ## Logical NLG
