@@ -68,7 +68,7 @@ A weakly-supervised training algorithm designs a rule to search for latent candi
 Architecture of Table-BERT is **a BERT Encoder** + **a MLP Classifier**. 
 1. How to encode a table? 
 First, we need to specify a table's features and how to read a table to get its meaning. The table is structured data with header strings and cells. The meaning of a cell is reflected by the corresponding header string within the same column. The meaning of a row is a combination of certain cells, involving the meanings of several columns. 
-Second, we need to think about how to encode the table with the above features. One way to encode structured data is to combine both sequence information as well as structural information. It is straightforward to get the sequence information since it could be fetched through cell contents. Table structure information can be viewed as a row number or column header string. As a result, the author proposed two different table linearization methods: **concatenation** and **template**.  
+Second, we need to think about how to encode the table with the above features. One way to encode structured data is to combine both sequence information as well as structural information. It is straightforward to get the sequence information since it could be fetched through cell contents. Table structure information can be viewed as a row number or column header string. Thus, the author proposed two different table linearization methods: **concatenation** and **template**.  
 
 ![](https://github.com/soda-lsq/Table2Text-Review/blob/main/Table-BERT.png?raw=true)
 
