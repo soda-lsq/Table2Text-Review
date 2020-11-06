@@ -2,7 +2,7 @@ Original Link: https://github.com/wenhuchen/Table-Fact-Checking
 
 # About Data
 
-## Raw Data
+## Raw Data (collected_data folder)
 
 The folder **"collected_data"** contains the **raw data collected directly from Mechnical Turker**, all the text are lower-cased, containing foreign characters in some tables. There are two files, the r1 file is collected in the first round (simple channel), which contains sentences involving less reasoning. The r2 file is collected in the second round (complex channel), which involves more complex multi-hop reasoning. 
 
@@ -24,7 +24,7 @@ Table Caption
 }
 ```
 
-An example : a table of 7 statements: Table id "xxx.csv" + [7 statements] + [7 labels] + Table caption. 
+An example : a table of 7 statements: Table id "xxx.csv" + [7 statements] + [7 labels] + Table caption. (1 for ENTAILED, 0 for REFUTED)
 
 ```
   "2-1123463-2.html.csv": [
@@ -48,4 +48,38 @@ An example : a table of 7 statements: Table id "xxx.csv" + [7 statements] + [7 l
     ],
     "2002 canadian grand prix"
 ```
+
+## Data Organization (in a certain format)
+
+Data are all in JSON format since reading quicker than txt.
+
+* all_csv folder: it contains all the table files in the csv format.
+
+* all_csv_ids.json: it contains all the table ids, all_csv_ids = complex_ids + simple_ids.
+
+* train_ids.json, val_ids.json, test_ids.json: these contain the table ids used for training/validation/testing
+
+* table_to_page.json links each table to its belonging wikipeia URL: Table ID "xxx.csv" + Table caption + URL
+
+```
+  "2-18847467-2.html.csv": [
+    "1982 new orleans saints season", 
+    "https://en.wikipedia.org/wiki/1982_New_Orleans_Saints_season"
+  ]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
