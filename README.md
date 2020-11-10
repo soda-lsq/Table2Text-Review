@@ -47,7 +47,7 @@ Tabfact is constructed based on WikiTables, with annotations from Amazon Mechani
 
 The common higher-order operations are grouped into 8 categories, aggregation, negate, superlative, count, compative,  ordinal, unique, all (sample 200 sentences to visualize distribution). 
 
-![](https://github.com/soda-lsq/Table2Text-Review/blob/main/dataset-statics.png?raw=true)
+![](https://github.com/soda-lsq/Table2Text-Review/blob/main/Figures/dataset-statics.png?raw=true)
 
 ### 4. Models
 
@@ -70,7 +70,7 @@ Architecture of Table-BERT is **a BERT Encoder** + **a MLP Classifier**.
 First, we need to specify a table's features and how to read a table to get its meaning. The table is structured data with header strings and cells. The meaning of a cell is reflected by the corresponding header string within the same column. The meaning of a row is a combination of certain cells, involving the meanings of several columns. 
 Second, we need to think about how to encode the table with the above features. One way to encode structured data is to combine both sequence information as well as structural information. It is straightforward to get the sequence information since it could be fetched through cell contents. Table structure information can be viewed as a row number or column header string. Thus, the author proposed two different table linearization methods: **concatenation** and **template**.  
 
-![](https://github.com/soda-lsq/Table2Text-Review/blob/main/Table-BERT.png?raw=true)
+![](https://github.com/soda-lsq/Table2Text-Review/blob/main/Figures/Table-BERT.png?raw=true)
 
 2. A MLP binary classifier, classify the (table, statememt) pair as ENTAILED statement when the probability is greater than 0.5.
 
