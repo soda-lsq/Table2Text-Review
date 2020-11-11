@@ -75,7 +75,7 @@ Output data: 生成tokenized_data文件夹中的full_cleaned.json，数据格式
 * 1. 读取原始数据的table_id，在all_csv中读取对应的table(table中各个cell的数值通过'#'分隔)，k是行号，_是每行对应的内容(k=0时对应表头内容)。依次从上至下的处理表格的每行，以及从左向右的处理每行的数据，两个#XX#中包含的是单元格内容。对于每个单元格内容，使用空格划分token，nltk.pos_tag()标注token的词性，同时使用tokenizer还原单词存入lemmatized_w中，对应的还原关系存入recover_dict中。
 ![](https://github.com/soda-lsq/Table2Text-Review/blob/main/Figures/data_preprocess.png)
 
-* 2. 将token对应的行列号存入backbone，即{'token': [k, l]}，此时一个token可能对应多个行列号。
+* 2. 将token对应在table中的位置（行列号）存入backbone，即{'token': [k, l]}，此时一个token可能对应多个行列号。
 ![](https://github.com/soda-lsq/Table2Text-Review/blob/main/Figures/Table-backbone.png)
 
 
