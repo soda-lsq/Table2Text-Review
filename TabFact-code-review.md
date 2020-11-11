@@ -72,14 +72,15 @@ Data are all in JSON format since reading quicker than txt.
 Input data: collected_data文件夹中收集的不同难度r1,r2的原始数据，数据格式为：table_id:[[statements], [labels], caption]
 Output data: 生成tokenized_data文件夹中的full_cleaned.json，数据格式为：
 # 数据预处理的流程：
-* 数据处理采用多进程并行处理，会导致输出不是按照代码print的位置输出，因此在测试代码功能时采用单线程处理，即设置了pool=Pool(1)
+* 数据处理采用多进程并行处理，会导致输出不是按照代码print的位置输出，因此在测试代码功能时采用单线程处理，即设置了pool=Pool(1)。
 * 1. 读取原始数据的table_id，在all_csv中读取对应的table(table中各个cell的数值通过'#'分隔)，k是行号，_是每行对应的内容(k=0时对应表头内容)。依次从上至下的处理表格的每行，以及从左向右的处理每行的数据，两个#XX#中包含的是单元格内容。对于每个单元格内容，使用空格划分token，nltk.pos_tag()标注token的词性，同时使用tokenizer还原单词存入lemmatized_w中，对应的还原关系存入recover_dict中。
 ![](https://github.com/soda-lsq/Table2Text-Review/blob/main/Figures/data_preprocess.png)
 
-* 2. 将token对应在table中的位置（行列号）存入backbone，即{'token': [k, l]}，此时一个token可能对应多个行列号。
+* 2. 将token（lemmatized_w中的内容）对应在table中的位置（行列号）存入backbone，即{'token': [k, l]}，此时一个token可能对应多个行列号。
 ![](https://github.com/soda-lsq/Table2Text-Review/blob/main/Figures/Table-backbone.png)
 
-
+* 以上是根据raw data中的table_id关联到Wikipedia表格得到的内容（主要是words[], pos_tags[], lemmatized_w[],以及整个表格对应的token与在表格中位置的映射backbone{}）。
+接下来处理raw data中的其他数据，statements(entry[0]), lables(entry[1]), caption(entry[2])
 
 
 
