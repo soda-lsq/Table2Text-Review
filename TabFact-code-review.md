@@ -87,7 +87,7 @@ Output data: 生成tokenized_data文件夹中的full_cleaned.json，数据格式
 * 4. 处理statements：
   * 调用get_lemmatize()获取statements对应的words和pos_tags。
   * 查找statement中与表格单元格内容相同的最长部分，用两个##括起来，并在后面附加在表中的位置（第一组行列号）。
-* 下面通过一个例子表明
+* 下面通过一个例子表明数据的预处理流程，根据raw_data的table_id找到csv_data，生成backbone，再处理caption和statements，在statement和表格内容之间做entity_linking，从而得到cleaned_data.
 
 ![](https://github.com/soda-lsq/Table2Text-Review/blob/main/Figures/raw_data.png)
 
