@@ -36,7 +36,7 @@ This is a review for the Logical table2text task, following the work of [wenhuch
 
 ### 3. Table Fact Verification Dataset (TabFact)
 
-Tabfact is constructed based on WikiTables, with annotations from Amazon Mechanical Turk workers. Following a pipeline of "positive two channel annotation" -> "negative statement rewrinting" -> "verification" to ensure the annotation quality. 
+Tabfact is constructed based on WikiTables, with annotations from Amazon Mechanical Turk workers. Following a pipeline of "positive two channel annotation" -> "negative statement rewriting" -> "verification" to ensure the annotation quality. 
 
 #### 3.1 Positive Two-Channel Collection & Negative Rewriting Strategy
 * Low-Reward Simple Channel: write 5 sentences to a single row/record in the table, (1) with unary fact without envolving logical inference, (2) mention the cell values without modification.
