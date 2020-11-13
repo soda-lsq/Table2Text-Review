@@ -91,8 +91,10 @@ Output data: 生成tokenized_data文件夹中的full_cleaned.json，数据格式
 
 ![](https://github.com/soda-lsq/Table2Text-Review/blob/main/Figures/raw_data.png)
 
+![](https://github.com/soda-lsq/Table2Text-Review/blob/main/Figures/cleaned_data.png)
+
 ![](https://github.com/soda-lsq/Table2Text-Review/blob/main/Figures/csv_data.png)
 
-![](https://github.com/soda-lsq/Table2Text-Review/blob/main/Figures/cleaned_data.png)
+
 
 
